@@ -12,3 +12,5 @@
 	email = code@jamesmckay.cc
 [commit]
 	template = ~/.stCommitMsg
+[alias]
+	root = rev-parse --show-toplevel
