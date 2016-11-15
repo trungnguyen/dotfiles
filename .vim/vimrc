@@ -25,6 +25,7 @@ Plugin 'tpope/vim-dispatch'
 Plugin 'scrooloose/syntastic'
 Plugin 'kien/ctrlp.vim'
 Plugin 'kchmck/vim-coffee-script'
+Plugin 'kshenoy/vim-signature'
 
 " ====== C# code completion ====== "
 
