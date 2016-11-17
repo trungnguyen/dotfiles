@@ -3,14 +3,16 @@
 	editor = vim
 [difftool "sourcetree"]
 	cmd = /Applications/p4merge.app/Contents/MacOS/p4merge \"$LOCAL\" \"$REMOTE\"
-	path =
+	path = 
 [mergetool "sourcetree"]
 	cmd = /Applications/p4merge.app/Contents/MacOS/p4merge \"$BASE\" \"$LOCAL\" \"$REMOTE\" \"$MERGED\"
 	trustExitCode = true
 [user]
 	name = James McKay
-	email = code@jamesmckay.cc
+	email = code@jamesmckay.net
+	signingkey = 1B9DC839
 [commit]
 	template = ~/.stCommitMsg
+	gpgsign = true
 [alias]
 	root = rev-parse --show-toplevel
