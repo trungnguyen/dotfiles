@@ -2,12 +2,21 @@
 
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
+if ! [ -f ~/.dotfiles-backup ]; then
+    mkdir -p ~/.dotfiles-backup
+fi
+
 # ====== Symlink all dotfiles and dotfolders into root directory ====== #
 
 for I in $(ls -A $DIR/link)
 do
     if [ -f ~/$I ] || [ -h ~/$I ]; then
-        rm ~/$I
+        if ! [ -e ~/.dotfiles-backup/$I ]; then
+            echo Backing up $I to ./dotfiles-backup
+            mv ~/$I ~/.dotfiles-backup
+        else
+            rm ~/$I
+        fi
     fi
     ln -s $DIR/link/$I ~/$I
 done
