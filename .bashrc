@@ -7,10 +7,4 @@ PS1="\[$(tput setaf 10)\]\[$(tput bold)\]\u\[$(tput sgr0)\]\[$(tput setaf 14)\] 
 
 alias ls="ls -G"
 
-function run_disowned() {
-    "$@" & disown
-}
-
-function dos() {
-    run_disowned "$@" 1>/dev/null 2>/dev/null
-}
+PATH=$PATH:~/.bin:~/.bin/dotfiles

@@ -1,0 +1,7 @@
+#! /bin/bash
+
+function run_disowned() {
+    "$@" & disown
+}
+
+run_disowned "$@" 1>/dev/null 2>/dev/null

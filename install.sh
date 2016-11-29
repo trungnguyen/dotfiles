@@ -14,6 +14,13 @@ done
 
 # ====== Configure vim ====== #
 
-mkdir -p $DIR/.vim/bundle
-git clone https://github.com/gmarik/vundle $DIR/.vim/bundle/vundle
-vim -C +PluginInstall +qa!
+if ! [ -d $DIR/.vim/bundle ]; then
+    mkdir -p $DIR/.vim/bundle
+    git clone https://github.com/gmarik/vundle $DIR/.vim/bundle/vundle
+    vim -C +PluginInstall +qa!
+fi
+
+# ====== Append to path ====== #
+
+mkdir -p ~/.bin
+ln -s $DIR/bin ~/.bin/dotfiles
