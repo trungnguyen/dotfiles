@@ -1,0 +1,20 @@
+#! /bin/bash
+
+# Is p4merge already installed?
+a=$(which -a p4merge | grep -vF $0 | head -n 1)
+
+# OS specific
+if ! [[ -f $a ]]; then
+    case "$OSTYPE" in
+        darwin*)    a="/Applications/p4merge.app/Contents/MacOS/p4merge"
+    esac
+fi
+
+# Run it if found, otherwise barf with an error
+if [[ -f $a ]]; then
+    $a "$@"
+    exit $?
+else
+    echo "$a not found, please install it"
+    exit 255
+fi
