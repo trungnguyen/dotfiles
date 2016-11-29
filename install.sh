@@ -13,7 +13,7 @@ fi
 
 for I in $(ls -A $DIR/home)
 do
-    if [ -f ~/$I ] || [ -h ~/$I ]; then
+    if [ -e ~/$I ]; then
         if ! [ -e ~/.dotfiles-backup/home/$I ]; then
             echo Backing up $I to .dotfiles-backup/home
             mv ~/$I ~/.dotfiles-backup/home
@@ -27,7 +27,9 @@ done
 # ====== Append to path ====== #
 
 mkdir -p ~/.bin
-ln -fhs $DIR/bin ~/.bin/dotfiles
+if ! [ -e $DIR/bin ]; then
+    ln -s $DIR/bin ~/.bin/dotfiles
+fi
 
 # ====== Configure vim ====== #
 
