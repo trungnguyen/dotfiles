@@ -12,7 +12,6 @@
 	email = code@jamesmckay.net
 	signingkey = 1B9DC839
 [commit]
-	template = ~/.stCommitMsg
 	gpgsign = true
 [alias]
 	root = rev-parse --show-toplevel
