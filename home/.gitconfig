@@ -15,3 +15,5 @@
 	gpgsign = true
 [alias]
 	root = rev-parse --show-toplevel
+[gpg]
+	program = gpg2
