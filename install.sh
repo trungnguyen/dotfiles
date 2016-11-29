@@ -2,11 +2,30 @@
 
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
+# Detect the OS
+
+case "$OSTYPE" in
+    darwin*)
+        TARGET_OS=osx
+        ;;
+    linux*)
+        TARGET_OS=linux
+        ;;
+    *)
+        TARGET_OS=""
+        ;;
+esac
+
+if [ -f $DIR/$TARGET_OS/preinstall.sh ]; then
+    . $DIR/$TARGET_OS/preinstall.sh
+fi
+
+
 if ! [ -f ~/.dotfiles-backup/home ]; then
     mkdir -p ~/.dotfiles-backup/home
 fi
-if ! [ -f ~/.dotfiles-backup/local ]; then
-    mkdir -p ~/.dotfiles-backup/local
+if ! [ -f ~/.dotfiles-backup/files ]; then
+    mkdir -p ~/.dotfiles-backup/files
 fi
 
 # ====== Symlink all dotfiles and dotfolders into root directory ====== #
@@ -31,6 +50,10 @@ if ! [ -e $DIR/bin ]; then
     ln -s $DIR/bin ~/.bin/dotfiles
 fi
 
+# ====== Do the files directory ====== #
+
+$DIR/setup/install-files.py $TARGET_OS
+
 # ====== Configure vim ====== #
 
 if ! [ -d ~/.vim/bundle ]; then
@@ -38,3 +61,8 @@ if ! [ -d ~/.vim/bundle ]; then
     git clone https://github.com/gmarik/vundle ~/.vim/bundle/vundle
     vim -C +PluginInstall +qa!
 fi
+
+if [ -f $DIR/$TARGET_OS/postinstall.sh ]; then
+    . $DIR/$TARGET_OS/postinstall.sh
+fi
+

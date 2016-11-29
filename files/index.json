@@ -1,0 +1,5 @@
+{
+    "vscode.settings.json": {
+        "linux": "~/.config/Code/User/settings.json"
+    }
+}
