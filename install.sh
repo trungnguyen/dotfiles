@@ -52,7 +52,7 @@ fi
 
 # ====== Do the files directory ====== #
 
-$DIR/setup/install-files.py $TARGET_OS
+$DIR/apps/vscode/install.sh
 
 # ====== Configure vim ====== #
 

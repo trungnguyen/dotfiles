@@ -1,0 +1,5 @@
+DotJoshJohnson.xml
+PeterJausovec.vscode-docker
+donjayamanne.python
+mauve.terraform
+vscodevim.vim
