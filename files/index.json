@@ -1,6 +1,0 @@
-{
-    "vscode.settings.json": {
-        "linux": "~/.config/Code/User/settings.json",
-        "osx": "~/Library/Application Support/Code/User/settings.json"
-    }
-}
