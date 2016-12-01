@@ -45,6 +45,6 @@ if ! fgrep -q '/usr/local/bin/zsh' /etc/shells; then
 fi;
 
 # TODO: swap to using zsh once it's configured properly
-if [[ $(finger -l | grep -o -e Shell:.* | cut -d' ' -f2) != "/usr/local/bin/bash" ]]; then
-    chsh -s /usr/local/bin/bash;
+if [[ $(finger -l | grep -o -e Shell:.* | cut -d' ' -f2) != "/usr/local/bin/zsh" ]]; then
+    chsh -s /usr/local/bin/zsh
 fi
