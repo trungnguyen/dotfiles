@@ -23,10 +23,10 @@ select-word-style shell
 # Colours for ls
 
 if [[ -x "`whence -p dircolors`" ]]; then
-  eval `dircolors`
-  alias ls='ls -F --color=auto'
+    eval `dircolors`
+    alias ls='ls -F --color=auto'
 else
-  alias ls='ls -F'
+    alias ls='ls -F'
 fi
 
 # Shortcuts for ls
@@ -69,6 +69,6 @@ parse_git_branch() {
     git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
 }
 
-export PS1='%B%F{green}%n %F{yellow}%~%F{red}$(parse_git_branch)'$'\n''%F{blue}%h %f$ '
+export PS1='%B%F{green}%n %F{yellow}%~%F{red}$(parse_git_branch)'$'\n''%F{blue}%h %f%b$ '
 
 PATH=$PATH:~/.bin:~/.bin/dotfiles
