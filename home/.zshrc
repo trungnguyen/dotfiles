@@ -22,12 +22,7 @@ select-word-style shell
 
 # Colours for ls
 
-if [[ -x "`whence -p dircolors`" ]]; then
-    eval `dircolors`
-    alias ls='ls -F --color=auto'
-else
-    alias ls='ls -F'
-fi
+alias ls='ls -G'
 
 # Shortcuts for ls
 alias ll='ls -l'
