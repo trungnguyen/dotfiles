@@ -1,4 +1,4 @@
-#! /bin/bash
+#! /usr/bin/env bash
 
 # Is p4merge already installed?
 a=$(which -a p4merge | grep -vF $0 | head -n 1)
