@@ -20,8 +20,8 @@ The directory layout is as follows:
  * **`home`** contains files and folders that will be symlinked to corresponding
     locations in your home directory. Existing files and folders will be backed
     up to `~/.dotfiles-backup`.
- * **`osx`** currently contains OS X-specific files. These are not currently
-    used by the install script.
+ * **`osx`** currently contains OS X-specific files. The preinstall.sh file will
+    be run at the start of the install script.
  * **`setup`** contains additional scripts required by the setup process.
 
 If you want to use these as a template for your own dotfiles, clone this
