@@ -12,5 +12,8 @@
 
     "search.exclude": {
         "**/.terraform": true
-    }
+    },
+
+    "terminal.integrated.shell.osx": "/usr/local/bin/zsh",
+    "terminal.integrated.shell.linux": "zsh"
 }
