@@ -36,3 +36,6 @@ alias ls="ls -G"
 
 PATH=$PATH:~/.bin:~/.bin/dotfiles
 
+cd-git-root() {
+    chdir "$(git root)"
+}
