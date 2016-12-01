@@ -15,5 +15,6 @@
 	gpgsign = true
 [alias]
 	root = rev-parse --show-toplevel
+	graph = log --oneline --graph
 [gpg]
 	program = gpg2
