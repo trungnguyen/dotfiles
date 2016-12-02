@@ -15,6 +15,10 @@
 	gpgsign = true
 [alias]
 	root = rev-parse --show-toplevel
-	graph = log --oneline --graph
+	graph = log --graph --pretty=twoline --date=format:\"%d/%m/%Y %H:%M:%S\"
+	ln = log --pretty=twoline --date=format:\"%d/%m/%Y %H:%M:%S\"
+	lonn = log --pretty=twoline --date=format:\"%d/%m/%Y %H:%M:%S\"
 [gpg]
 	program = gpg2
+[pretty]
+	twoline = %C(bold)%C(yellow)%h %C(cyan)%ad%C(red)%d %C(green)%an %C(no-bold)%C(dim)<%ae>%n        %s%n
