@@ -21,4 +21,4 @@
 [gpg]
 	program = gpg2
 [pretty]
-	twoline = %C(bold)%C(yellow)%h %C(cyan)%ad%C(red)%d %C(green)%an %C(no-bold)%C(dim)<%ae>%n        %s%n
+	twoline = %C(bold)%C(yellow)%h %C(cyan)%ad%C(red)%d %C(green)%an %C(nobold)%C(dim)<%ae>%n        %s%n
