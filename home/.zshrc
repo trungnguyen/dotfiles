@@ -68,6 +68,11 @@ export PS1='%B%F{green}%n %F{yellow}%~%F{red}$(parse_git_branch)'$'\n''%F{blue}%
 
 PATH=$PATH:~/.bin:~/.bin/dotfiles
 
-cd-git-root() {
-    chdir "$(git root)"
+git-cd() {
+    if $1; then
+        chdir "$(git root)/$1"
+    else
+        chdir "$(git root)"
+    fi
 }
+
