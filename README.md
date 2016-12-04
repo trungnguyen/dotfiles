@@ -39,3 +39,6 @@ Windows is not supported as I am currently working mainly with OSX and Ubuntu.
 In addition, managing configuration on Windows presents significant additional
 challenges of both a technical and cultural nature, so I have very little
 incentive to do so.
+
+For further advice and suggestions on how to manage your dotfiles, visit
+[https://dotfiles.github.io/](https://dotfiles.github.io/).
