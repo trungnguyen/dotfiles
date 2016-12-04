@@ -21,5 +21,5 @@
 [gpg]
 	program = gpg2
 [pretty]
-	natural     = %C(bold)%C(yellow)%h %C(cyan)%ad%C(red)%d %C(green)%an %C(no-bold)%C(dim)<%ae>%n        %s
-	natural-gap = %C(bold)%C(yellow)%h %C(cyan)%ad%C(red)%d %C(green)%an %C(no-bold)%C(dim)<%ae>%n        %s%n
+	natural     = %C(bold)%C(yellow)%h %C(cyan)%ad%C(red)%d %C(green)%an %C(nobold)%C(dim)<%ae>%n        %s
+	natural-gap = %C(bold)%C(yellow)%h %C(cyan)%ad%C(red)%d %C(green)%an %C(nobold)%C(dim)<%ae>%n        %s%n
