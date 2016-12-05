@@ -31,6 +31,8 @@ brew install bash-completion2
 brew install zsh
 # Install python 3
 brew install python3
+# Install hub (GitHub command line tools)
+brew install hub
 
 # ====== Configuration ====== #
 
