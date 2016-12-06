@@ -3,4 +3,5 @@ DotJoshJohnson.xml
 lukehoban.Go
 mauve.terraform
 PeterJausovec.vscode-docker
+rebornix.Ruby
 vscodevim.vim
