@@ -27,6 +27,9 @@ Plugin 'kien/ctrlp.vim'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'kshenoy/vim-signature'
 Plugin 'hashivim/vim-terraform'
+Plugin 'tpope/vim-rails'
+Plugin 'vim-ruby/vim-ruby'
+
 
 " ====== C# code completion ====== "
 
