@@ -29,6 +29,7 @@ Plugin 'kshenoy/vim-signature'
 Plugin 'hashivim/vim-terraform'
 Plugin 'tpope/vim-rails'
 Plugin 'vim-ruby/vim-ruby'
+Plugin 'Valloric/YouCompleteMe'
 
 
 " ====== C# code completion ====== "

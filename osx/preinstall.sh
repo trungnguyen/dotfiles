@@ -33,6 +33,12 @@ brew install zsh
 brew install python3
 # Install hub (GitHub command line tools)
 brew install hub
+# Install CMake
+brew install cmake
+# Node.js stuff
+brew install nodejs
+brew install npm
+npm install -g typescript
 
 # ====== Configuration ====== #
 

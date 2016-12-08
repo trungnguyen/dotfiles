@@ -7,3 +7,7 @@ if ! [ -d ~/.vim/bundle ]; then
     git clone https://github.com/gmarik/vundle ~/.vim/bundle/vundle
     vim -C +PluginInstall +qa!
 fi
+
+pushd ~/.vim/bundle/YouCompleteMe
+./install.py --tern-completer
+popd
