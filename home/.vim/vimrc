@@ -70,6 +70,11 @@ set modeline
 set smartcase
 set gdefault
 set encoding=utf8
+set guioptions-=r
+set guioptions-=R
+set guioptions-=l
+set guioptions-=L
+
 
 " silent! to comfort vim 7.2 on 1and1 server
 silent! set colorcolumn=100
