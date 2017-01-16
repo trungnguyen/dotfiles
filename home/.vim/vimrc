@@ -76,6 +76,7 @@ set guioptions-=r
 set guioptions-=R
 set guioptions-=l
 set guioptions-=L
+set notimeout
 
 
 " silent! to comfort vim 7.2 on 1and1 server
