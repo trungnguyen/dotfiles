@@ -32,7 +32,7 @@ Plugin 'tpope/vim-rails'
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'honza/vim-snippets'
-
+Plugin 'SirVer/ultisnips'
 
 " ====== C# code completion ====== "
 
@@ -125,3 +125,13 @@ autocmd Filetype config setlocal ts=2 sts=2 sw=2
 
 " Ruby files should use two spaces for indent, not four
 autocmd Filetype ruby setlocal ts=2 sts=2 sw=2
+
+" YouCompleteMe and UltiSnips compatibility, with the helper of supertab
+" (via http://stackoverflow.com/a/22253548/1626737)
+let g:SuperTabDefaultCompletionType    = '<C-n>'
+let g:SuperTabCrMapping                = 0
+let g:UltiSnipsExpandTrigger           = '<tab>'
+let g:UltiSnipsJumpForwardTrigger      = '<tab>'
+let g:UltiSnipsJumpBackwardTrigger     = '<s-tab>'
+let g:ycm_key_list_select_completion   = ['<C-j>', '<C-n>', '<Down>']
+let g:ycm_key_list_previous_completion = ['<C-k>', '<C-p>', '<Up>']
