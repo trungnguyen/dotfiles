@@ -80,7 +80,7 @@ set notimeout
 
 
 " silent! to comfort vim 7.2 on 1and1 server
-silent! set colorcolumn=100
+silent! set colorcolumn=80,100,120
 silent! set relativenumber
 
 let g:ctrlp_regexp = 1
