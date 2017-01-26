@@ -136,6 +136,12 @@ let g:UltiSnipsJumpBackwardTrigger     = '<s-tab>'
 let g:ycm_key_list_select_completion   = ['<C-j>', '<C-n>', '<Down>']
 let g:ycm_key_list_previous_completion = ['<C-k>', '<C-p>', '<Up>']
 
+" Terraform should format on save
+let g:terraform_fmt_on_save = 1
+
+" Terraform files should have 2 space indents
+autocmd Filetype terraform setlocal ts=2 sts=2 sw=2
+
 " Trim trailing whitespace
 " http://stackoverflow.com/questions/356126/how-can-you-automatically-remove-trailing-whitespace-in-vim
 
