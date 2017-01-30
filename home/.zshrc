@@ -66,7 +66,7 @@ parse_git_branch() {
 
 export PS1='%B%F{green}%n %F{yellow}%~%F{red}$(parse_git_branch)'$'\n''%F{blue}%h %f%b$ '
 
-GOPATH=~/go
+export GOPATH=~/go
 mkdir -p $GOPATH
 
 PATH=$PATH:~/.bin:~/.bin/dotfiles:$GOPATH/bin
