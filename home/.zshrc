@@ -66,7 +66,10 @@ parse_git_branch() {
 
 export PS1='%B%F{green}%n %F{yellow}%~%F{red}$(parse_git_branch)'$'\n''%F{blue}%h %f%b$ '
 
-PATH=$PATH:~/.bin:~/.bin/dotfiles
+GOPATH=~/go
+mkdir -p $GOPATH
+
+PATH=$PATH:~/.bin:~/.bin/dotfiles:$GOPATH/bin
 
 git-cd() {
     if $1; then
