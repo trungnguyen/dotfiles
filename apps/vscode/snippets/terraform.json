@@ -19,5 +19,82 @@
 			"# ====== $1 ====== #"
 		],
 		"description": "Insert a header comment"
+	},
+
+	"Resource": {
+		"prefix" : "#resource",
+		"body": [
+			"# ====== ${2:name} ====== #",
+			"",
+			"resource \"${1:resource_type}\" \"${2:name}\" {",
+			"  ${3:body}",
+			"}"
+		],
+		"description": "Insert a Terraform resource"
+	},
+
+	"Module": {
+		"prefix": "#module",
+		"body": [
+			"# ====== ${1:name} ====== #",
+			"",
+			"module \"${1:name}\" {",
+			"  ${2:body}",
+			"}"
+		],
+		"description": "Insert a Terraform module"
+	},
+
+	"Variable": {
+		"prefix": "#var",
+		"body": [
+			"variable \"${1:name}\" {",
+			"  type = \"${2:type}\"",
+			"}"
+		],
+		"description": "Insert a Terraform variable"
+	},
+
+	"Variable with default": {
+		"prefix": "#vardef",
+		"body": [
+			"variable \"${1:name}\" {",
+			"  type    = \"${2:type}\"",
+			"  default = \"${3:default}\"",
+			"}"
+		],
+		"description": "Insert a Terraform variable"
+	},
+
+	"Variable reference": {
+		"prefix": "#varref",
+		"body": [
+			"\"$\\{var.${1:type}.${2:name}\\}\""
+		],
+		"description": "Insert a reference to a variable"
+	},
+
+	"Module reference": {
+		"prefix": "#modref",
+		"body": [
+			"\"$\\{module.${1:name}.${2:property}\\}\""
+		],
+		"description": "Insert a reference to a module property"
+	},
+
+	"Resource reference": {
+		"prefix": "#ref",
+		"body": [
+			"\"$\\{${1:type}.${2:name}.${3:property}\""
+		],
+		"description": "Insert a reference to a resource property"
+	},
+
+	"Data reference": {
+		"prefix": "#dataref",
+		"body": [
+			"\"data.$\\{${1:type}.${2:name}.${3:property}\""
+		],
+		"description": "Insert a reference to a data source property"
 	}
 }
