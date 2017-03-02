@@ -6,13 +6,13 @@ DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 case "$OSTYPE" in
     darwin*)
-        TARGET_OS=osx
+        export TARGET_OS=osx
         ;;
     linux*)
-        TARGET_OS=linux
+        export TARGET_OS=linux
         ;;
     *)
-        TARGET_OS=""
+        export TARGET_OS=""
         ;;
 esac
 
