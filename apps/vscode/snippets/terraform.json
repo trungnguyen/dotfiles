@@ -24,8 +24,6 @@
 	"Resource": {
 		"prefix" : "#resource",
 		"body": [
-			"# ====== ${2:name} ====== #",
-			"",
 			"resource \"${1:resource_type}\" \"${2:name}\" {",
 			"  ${3:body}",
 			"}"
@@ -36,8 +34,6 @@
 	"Module": {
 		"prefix": "#module",
 		"body": [
-			"# ====== ${1:name} ====== #",
-			"",
 			"module \"${1:name}\" {",
 			"  ${2:body}",
 			"}"
@@ -69,7 +65,7 @@
 	"Variable reference": {
 		"prefix": "#varref",
 		"body": [
-			"\"$\\{var.${1:type}.${2:name}\\}\""
+			"\"${var.${1:name}\\}\""
 		],
 		"description": "Insert a reference to a variable"
 	},
@@ -77,7 +73,7 @@
 	"Module reference": {
 		"prefix": "#modref",
 		"body": [
-			"\"$\\{module.${1:name}.${2:property}\\}\""
+			"\"${module.${1:name}.${2:property}\\}\""
 		],
 		"description": "Insert a reference to a module property"
 	},
@@ -85,7 +81,7 @@
 	"Resource reference": {
 		"prefix": "#ref",
 		"body": [
-			"\"$\\{${1:type}.${2:name}.${3:property}\""
+			"\"${${1:type}.${2:name}.${3:property}\\}\""
 		],
 		"description": "Insert a reference to a resource property"
 	},
