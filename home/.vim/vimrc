@@ -15,6 +15,7 @@ call vundle#rc(printf('%s/bundle', s:portable))
 Plugin 'gmarik/vundle'
 
 Plugin 'scrooloose/nerdtree'
+Plugin 'scrooloose/nerdcommenter'
 Plugin 'PProvost/vim-ps1'
 Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'groenewege/vim-less'
@@ -26,6 +27,12 @@ Plugin 'scrooloose/syntastic'
 Plugin 'kien/ctrlp.vim'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'kshenoy/vim-signature'
+Plugin 'hashivim/vim-terraform'
+Plugin 'tpope/vim-rails'
+Plugin 'vim-ruby/vim-ruby'
+Plugin 'Valloric/YouCompleteMe'
+Plugin 'honza/vim-snippets'
+Plugin 'SirVer/ultisnips'
 
 " ====== C# code completion ====== "
 
@@ -65,9 +72,15 @@ set modeline
 set smartcase
 set gdefault
 set encoding=utf8
+set guioptions-=r
+set guioptions-=R
+set guioptions-=l
+set guioptions-=L
+set notimeout
+
 
 " silent! to comfort vim 7.2 on 1and1 server
-silent! set colorcolumn=100
+silent! set colorcolumn=80,100,120
 silent! set relativenumber
 
 let g:ctrlp_regexp = 1
@@ -109,3 +122,38 @@ autocmd Filetype ps1 setlocal noexpandtab
 " .config files should use two spaces for indent, not four
 " This is to match what Visual Studio does by default
 autocmd Filetype config setlocal ts=2 sts=2 sw=2
+
+" Ruby files should use two spaces for indent, not four
+autocmd Filetype ruby setlocal ts=2 sts=2 sw=2
+
+" YouCompleteMe and UltiSnips compatibility, with the helper of supertab
+" (via http://stackoverflow.com/a/22253548/1626737)
+let g:SuperTabDefaultCompletionType    = '<C-n>'
+let g:SuperTabCrMapping                = 0
+let g:UltiSnipsExpandTrigger           = '<tab>'
+let g:UltiSnipsJumpForwardTrigger      = '<tab>'
+let g:UltiSnipsJumpBackwardTrigger     = '<s-tab>'
+let g:ycm_key_list_select_completion   = ['<C-j>', '<C-n>', '<Down>']
+let g:ycm_key_list_previous_completion = ['<C-k>', '<C-p>', '<Up>']
+
+" NERDCommenter
+let g:NERDSpaceDelims = 1
+let g:NERDDefaultAlign = 'left'
+
+" Terraform should format on save
+let g:terraform_fmt_on_save = 1
+
+" Terraform files should have 2 space indents
+autocmd Filetype terraform setlocal ts=2 sts=2 sw=2
+
+" Trim trailing whitespace
+" http://stackoverflow.com/questions/356126/how-can-you-automatically-remove-trailing-whitespace-in-vim
+
+fun! <SID>StripTrailingWhitespaces()
+    let l = line(".")
+    let c = col(".")
+    %s/\s\+$//e
+    call cursor(l, c)
+endfun
+
+autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()

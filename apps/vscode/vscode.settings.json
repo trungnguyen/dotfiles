@@ -1,7 +1,7 @@
 // Place your settings in this file to overwrite the default settings
 {
     "editor.fontFamily": "Menlo, 'DejaVu Sans Mono', Consolas, Monaco, 'Courier New', monospace, 'Droid Sans Fallback'",
-    "editor.fontSize": 12,
+    "editor.fontSize": 11,
     "editor.renderWhitespace": "all",
     "editor.renderIndentGuides": true,
     "editor.rulers": [

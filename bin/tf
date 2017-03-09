@@ -1,0 +1,3 @@
+#! /bin/bash
+
+$(which -a terraform | grep -v go | head -1) "$@"

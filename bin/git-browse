@@ -1,0 +1,22 @@
+#! /usr/bin/env bash
+
+REMOTE=$1
+
+if [ -z $REMOTE ]; then
+    REMOTE=origin
+fi
+
+URL=$(git remote get-url $REMOTE 2> /dev/null)
+if (( $? > 0 )); then
+    echo "Remote $REMOTE does not exist"
+    exit 1
+fi
+
+URL=${URL/%.git/}
+
+if [[ $URL == git@* ]]; then
+    URL=${URL/#git@/}
+    URL=https://${URL/\:/\/}
+fi
+
+open $URL

@@ -66,8 +66,16 @@ parse_git_branch() {
 
 export PS1='%B%F{green}%n %F{yellow}%~%F{red}$(parse_git_branch)'$'\n''%F{blue}%h %f%b$ '
 
-PATH=$PATH:~/.bin:~/.bin/dotfiles
+export GOPATH=~/go
+mkdir -p $GOPATH
 
-cd-git-root() {
-    chdir "$(git root)"
+PATH=$PATH:~/.bin:~/.bin/dotfiles:$GOPATH/bin
+
+git-cd() {
+    if $1; then
+        chdir "$(git root)/$1"
+    else
+        chdir "$(git root)"
+    fi
 }
+
