@@ -29,6 +29,11 @@ The directory layout is as follows:
  * **`setup`** contains any additional scripts that may be required by the setup
     process.
 
+To install
+----------
+ 1. Run sudo ./.suinstall.sh.
+ 2. Run ./install.sh.
+
 Other notes
 -----------
 I'm using zsh rather than bash as my shell, so most of the scripts here will be
