@@ -3,6 +3,4 @@
 git fetch upstream
 git stash
 git reset --hard upstream/development
-git rebase
 git stash pop
-git push
