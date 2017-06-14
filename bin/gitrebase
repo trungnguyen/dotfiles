@@ -1,0 +1,6 @@
+#!/bin/sh
+
+git fetch upstream
+git stash
+git rebase upstream/development
+git stash pop
